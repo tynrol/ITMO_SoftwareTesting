@@ -62,9 +62,6 @@ public class MyMap<K,V> {
                 }
             }
         }
-
-
-
     }
     public V get(K key){
         int index = getIndex(key);
@@ -101,4 +98,3 @@ public class MyMap<K,V> {
         return head.value;
     }
 }
-
