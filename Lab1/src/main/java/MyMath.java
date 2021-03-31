@@ -23,8 +23,10 @@ public class MyMath{
     }
 
     public double sec(double x){
-        if (Math.abs(x) > Math.PI)
+        if (Math.abs(x) > Integer.MAX_VALUE)
             return Double.NaN;
+        if (Math.abs(x) > 2*Math.PI)
+            x = x%(2*Math.PI);
         if (Math.abs(x) == Math.PI/2)
             return Double.NaN;
         double value = 0;

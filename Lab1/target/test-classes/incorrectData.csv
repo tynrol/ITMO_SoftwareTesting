@@ -1,7 +1,7 @@
 Input, Expected
-10, NaN
--10, NaN
-3.15, NaN
--3.15, NaN
 PI/2, NaN
-PI/2, NaN
+-PI/2, NaN
+5PI/2, NaN
+-5PI/2, NaN
+2147483648, NaN
+-2147483648, NaN

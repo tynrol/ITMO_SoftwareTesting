@@ -10,6 +10,7 @@ public class MathTest {
     public void testSecCorrectData(String input, double expected){
         double inputNum = parseInput(input);
         Assertions.assertEquals(expected, Math.round(myMath.sec(inputNum)*1000.0)/1000.0);
+        
     }
 
     @ParameterizedTest
@@ -20,22 +21,16 @@ public class MathTest {
     }
     public double parseInput(String input) {
         double inputNum;
-        switch (input.trim()) {
-            case ("PI/2"):
-                inputNum = Math.PI / 2;
-                break;
-            case ("-PI/2"):
-                inputNum = -Math.PI / 2;
-                break;
-            case ("PI"):
-                inputNum = Math.PI;
-                break;
-            case ("-PI"):
-                inputNum = -Math.PI;
-                break;
-            default:
-                inputNum = Double.parseDouble(input);
-        }
+        if (input.matches("^[0-9]*PI/2"))
+            inputNum = Math.PI / 2;
+        else if (input.matches("^-[0-9]*PI/2"))
+            inputNum = -Math.PI / 2;
+        else if (input.matches("^[0-9]*PI"))
+            inputNum = Math.PI;
+        else if (input.matches("^-[0-9]*PI"))
+            inputNum = -Math.PI;
+        else
+            inputNum = Double.parseDouble(input);
         return inputNum;
     }
 }
