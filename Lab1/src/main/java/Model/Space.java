@@ -1,5 +1,6 @@
 package Model;
 
+import javax.xml.ws.Holder;
 import java.io.*;
 import java.util.*;
 
@@ -70,6 +71,17 @@ public class Space {
             return 0;
         }
         return 1;
+
+    }
+
+    public void humanWentFlying(Human human){
+        SoundSource engine = getClosestSoundSource(human.getLocation());
+        if ((engine instanceof Engine) && (( (Engine) engine).isWorking()) && engine.getNoiseLevel() > 200 && engine.getLocation().getDistance(human.getLocation()) < 20){
+            human.setFlying(true);
+        } else {
+            human.setFlying(false);
+        }
+        human.isFlying();
 
     }
 

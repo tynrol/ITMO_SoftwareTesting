@@ -4,6 +4,7 @@ public class Human {
     private String name;
     private int age, weight;
     private Location location;
+    private boolean isFlying;
 
     public Human(String name, int age, int weight, Location location) {
         this.name = name;
@@ -45,5 +46,20 @@ public class Human {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public boolean getFlying(){
+        return this.isFlying;
+    }
+
+    public void setFlying(boolean flying) {
+        isFlying = flying;
+    }
+
+    public void isFlying(){
+        if (this.isFlying)
+            System.out.println(this.name.toUpperCase() + " ЛЕТИТ");
+        else
+            System.out.println(this.name.toUpperCase() + " НЕ ПОЛЕТЕЛ :(");
     }
 }

@@ -21,6 +21,8 @@ public class ModelTest {
         space.addStar(star2);
         Assertions.assertTrue(shiningLevel == space.getLightLevel(human.getLocation()));
     }
+
+
     @Test
     public void testNoiseLevel(){
         Space space = new Space();
@@ -44,6 +46,9 @@ public class ModelTest {
 
         space.addSoundSource(engine4);
         Assertions.assertEquals(engine4.getNoiseLevel(),space.getNoiseLevel(human.getLocation()));
+
+        space.humanWentFlying(human);
+        Assertions.assertEquals(human.getFlying(),true);
 
 
     }

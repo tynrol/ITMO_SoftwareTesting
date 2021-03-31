@@ -1,3 +1,4 @@
+import Model.ILoveHashCode;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -11,33 +12,32 @@ public class MapTest {
     @Test
     public void testMyMap(){
 
-
-        MyMap<String,String> myMap = new MyMap<String, String>();
-        Map<String,String> expectedMap = new HashMap<String, String>();
-
+        MyMap<ILoveHashCode,String> myMap = new MyMap<ILoveHashCode, String>();
+        Map<ILoveHashCode,String> expectedMap = new HashMap<ILoveHashCode, String>();
 
         Assertions.assertEquals(expectedMap.isEmpty(), myMap.isEmpty());
         Assertions.assertEquals(expectedMap.size(), myMap.size());
 
-        myMap.add("a", "abcd");
-        myMap.add("b", "bcda");
-        myMap.add("c", "cdab");
-        myMap.add("d", "dabc");
+        myMap.add(new ILoveHashCode("a"), "abcd");
+        myMap.add(new ILoveHashCode("b"), "bcda");
+        myMap.add(new ILoveHashCode("c"), "cdab");
+        myMap.add(new ILoveHashCode("d"), "dabc");
 
-        expectedMap.put("a", "abcd");
-        expectedMap.put("b", "bcda");
-        expectedMap.put("c", "cdab");
-        expectedMap.put("d", "dabc");
+        expectedMap.put(new ILoveHashCode("a"), "abcd");
+        expectedMap.put(new ILoveHashCode("b"), "bcda");
+        expectedMap.put(new ILoveHashCode("c"), "cdab");
+        expectedMap.put(new ILoveHashCode("d"), "dabc");
 
         Assertions.assertEquals(expectedMap.isEmpty(), myMap.isEmpty());
         Assertions.assertEquals(expectedMap.size(), myMap.size());
-        Assertions.assertEquals(expectedMap.get("b"), myMap.get("b"));
-        Assertions.assertEquals(expectedMap.remove("c"), myMap.remove("c"));
+        Assertions.assertEquals(expectedMap.get(new ILoveHashCode("b")), myMap.get(new ILoveHashCode("b")));
+        Assertions.assertEquals(expectedMap.remove(new ILoveHashCode("c")), myMap.remove(new ILoveHashCode("c")));
 
-        myMap.add("e", "eatable");
-        myMap.add("e", "enable");
-        expectedMap.put("e", "eatable");
-        expectedMap.put("e", "enable");
-        Assertions.assertEquals(expectedMap.get("e"), myMap.get("e"));
+        myMap.add(new ILoveHashCode("c"), "eatable");
+        myMap.add(new ILoveHashCode("c"), "enable");
+        expectedMap.put(new ILoveHashCode("c"), "eatable");
+        expectedMap.put(new ILoveHashCode("c"), "enable");
+        Assertions.assertEquals(expectedMap.get(new ILoveHashCode("c")), myMap.get(new ILoveHashCode("c")));
+        System.out.println(expectedMap);
     }
 }

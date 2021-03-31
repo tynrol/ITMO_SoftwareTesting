@@ -10,6 +10,7 @@ class HashChain<K, V> {
         this.key = key;
         this.value = value;
     }
+
 }
 
 
@@ -97,4 +98,5 @@ public class MyMap<K,V> {
             chainArray.set(index, head.next);
         return head.value;
     }
+
 }
