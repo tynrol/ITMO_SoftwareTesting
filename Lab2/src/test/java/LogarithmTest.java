@@ -13,7 +13,7 @@ public class LogarithmTest {
         Logarithmic log = new Logarithmic();
         Assertions.assertEquals(0, log.ln(1,0.00001));
         Assertions.assertEquals(Double.NaN, log.ln(0,0.00001));
-            Assertions.assertEquals(1.000, BigDecimal.valueOf(log.ln(Math.E, 0.00001)).setScale(3, BigDecimal.ROUND_HALF_UP).doubleValue());
+        Assertions.assertEquals(1.000, BigDecimal.valueOf(log.ln(Math.E, 0.00001)).setScale(3, BigDecimal.ROUND_HALF_UP).doubleValue());
         Assertions.assertEquals(-1.386, BigDecimal.valueOf(log.ln(0.25, 0.00001)).setScale(3, BigDecimal.ROUND_HALF_UP).doubleValue());
         Assertions.assertEquals(-0.693, BigDecimal.valueOf(log.ln(0.5, 0.00001)).setScale(3, BigDecimal.ROUND_HALF_UP).doubleValue());
         Assertions.assertEquals(-0.288, BigDecimal.valueOf(log.ln(0.75, 0.00001)).setScale(3, BigDecimal.ROUND_HALF_UP).doubleValue());
